@@ -1,0 +1,42 @@
+{
+  "npmScope": "global",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "MWY3NWQzMWMtNzk1OC00ZmVlLThiYjItYzJiM2E3MjM5NzNhfHJlYWQtd3JpdGU="
+      }
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "projects": {
+    "bikeexpoapp": {
+      "tags": []
+    },
+    "vehicle": {
+      "tags": []
+    },
+    "vehicle-e2e": {
+      "tags": [],
+      "implicitDependencies": ["vehicle"]
+    }
+  }
+}
